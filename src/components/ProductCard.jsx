@@ -10,7 +10,18 @@ const ProductCard = ({ product }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
   const isAvailable = product.rating?.count > 0;
-  const variantOptions = ["S", "M", "L"];
+  let variantOptions = [];
+
+  if (
+    product.category === "men's clothing" ||
+    product.category === "women's clothing"
+  ) {
+    variantOptions = ["S", "M", "L"];
+  } else if (product.category === "jewelery") {
+    variantOptions = ["Silver", "Gold", "Platinum"];
+  } else {
+    variantOptions = ["Standard"];
+  }
   const rating = product.rating?.rate || 0;
 
   const handleAdd = () => {
