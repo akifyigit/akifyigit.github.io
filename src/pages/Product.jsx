@@ -123,7 +123,6 @@ const Product = () => {
       </>
     );
   };
-
   const ShowSimilarProduct = () => {
     return (
       <div className="py-4 my-4 d-flex ">

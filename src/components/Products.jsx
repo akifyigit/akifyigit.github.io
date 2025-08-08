@@ -12,12 +12,6 @@ const Products = () => {
   const [loading, setLoading] = useState(false);
   let componentMounted = true;
 
-  const dispatch = useDispatch();
-
-  const addProduct = (product) => {
-    dispatch(addCart(product));
-  };
-
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
@@ -103,8 +97,8 @@ const Products = () => {
             Electronics
           </button>
         </div>
-        {filter.map((product) => (
-          <ProductCard key={product.id} product={product} />
+        {filter.map((data) => (
+          <ProductCard key={data.id} product={data} />
         ))}
       </>
     );
